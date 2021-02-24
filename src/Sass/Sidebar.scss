@@ -1,0 +1,120 @@
+.sidebar {
+    width: 223px;
+    height: 100vh;
+	padding-left: 42px;
+	padding-top: 55px;
+
+    section{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+	&__logo {
+		display: flex;
+		align-items: center;
+
+		img {
+			height: 35px;
+		}
+
+		p {
+			font-weight: 900;
+			font-size: 14px;
+			line-height: 15px;
+			color: #121212;
+			padding-left: 5px;
+		}
+		span {
+			display: block;
+		}
+	}
+
+    &__menuBtn {
+        display: none;
+    }
+
+	&__links {
+		margin-top: 65px;
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+
+
+		a {
+			display: flex;
+            align-items: center;
+			color: #000;
+            padding-left: 24px;
+            width: 100%;
+            border-radius: 4px;
+            height: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 1rem;
+
+            p{
+                margin-left: 19px;
+            }
+		}
+
+        .active{
+            background: #f0660c;
+            // color: #fff;
+        }
+	}
+}
+
+@media only screen and (max-width: 600px){
+    .sidebar{
+        
+        &__close{
+            transform: translate(-100%);
+            // transition-delay: 2s;
+            transition: all 0.5s ease-out .7s;
+        }
+
+        &__menuBtn{
+            display: block;
+            transition: all 0.5s ease-out;
+            transform-origin: center 10px;
+        }
+
+        .menuBtn__line{
+            width: 30px;
+            height: 0.2rem;
+            margin-bottom: 0.4rem;
+            background: #F17C22;
+            transition: all 0.5s ease-out;
+        }
+
+        .menu__toggle{
+            transform: rotate(180deg);
+            
+
+            .menuBtn__line{
+                &:nth-child(1) {
+                    transform: rotate(45deg) translate(5px, 5px);
+                }
+            
+                // Line 2 - Hide
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+            
+                // Line 3 - Rotate
+                &:nth-child(3) {
+                    transform: rotate(-45deg) translate(8px, -8px);
+            
+                }
+            }
+
+        }
+
+ 
+
+    }
+} 

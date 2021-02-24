@@ -1,9 +1,11 @@
 import React from 'react';
+import Sidebar from './Sidebar';
 
-const Layout = () => {
+const Layout = ({ children }) => {
     return (
         <div className="layout">
-            layout
+            <Sidebar />
+            {children}
         </div>
     );
 }

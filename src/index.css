@@ -6,6 +6,15 @@
   box-sizing: border-box;
 }
 
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style-type: none;
+}
+
 body{
   font-family: 'Mulish', sans-serif;
+  background: #F4F4F4;
 }
