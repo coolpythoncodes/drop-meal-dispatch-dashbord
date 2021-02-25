@@ -1,8 +1,10 @@
 .sidebar {
-    width: 223px;
+    // width: 223px;
+    grid-area: sidebar;
     height: 100vh;
 	padding-left: 42px;
 	padding-top: 55px;
+    padding-right: 1rem;
 
     section{
         display: flex;
@@ -70,9 +72,17 @@
 
 @media only screen and (max-width: 600px){
     .sidebar{
+        display: none;
         
         &__close{
-            transform: translate(-100%);
+            display: block;
+            position: absolute;
+            left: 0;
+            z-index: 99999;
+            width: 223px;
+            // top: 100px;
+            background:yellow;
+            // transform: translate(-100%);
             // transition-delay: 2s;
             transition: all 0.5s ease-out .7s;
         }

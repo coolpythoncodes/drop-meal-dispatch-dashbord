@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { NavLink } from "react-router-dom";
+import { useContext } from 'react'
+import { MenuContext } from '../context'
+import { NavLink } from 'react-router-dom'
 import DropMealLogo from '../assest/DropMeal.png'
 import '../Sass/Sidebar.scss'
 // import OverviewTransparent from '../assest/overview_transparent.png'
@@ -10,7 +11,7 @@ import RidersImage from '../assest/riders.png'
 
 const Sidebar = () => {
 
-    const [sidebarOpen, setSidebarOpen] = useState(false);
+    const {sidebarOpen, setSidebarOpen} = useContext(MenuContext);
     const menuToggle = () => {
         setSidebarOpen(!sidebarOpen)
     }
@@ -43,7 +44,7 @@ const Sidebar = () => {
                     <img src={DropMealLogo}  alt=''/>
                     <p>DropMeal <span>Dispatch</span></p>
                 </div>
-                <div className={`sidebar__menuBtn ${sidebarOpen ? 'menu__toggle' : null}`} onClick={menuToggle}>
+                <div className='sidebar__menuBtn menu__toggle' onClick={menuToggle}>
                     <div className='menuBtn__line'></div>
                     <div className='menuBtn__line'></div>
                     <div className='menuBtn__line'></div>
