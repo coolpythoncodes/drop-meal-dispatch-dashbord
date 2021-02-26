@@ -1,3 +1,151 @@
-.overview{
-    grid-area: main;
+.overview {
+	grid-area: main;
+	padding-top: 41px;
+	padding-left: 1rem;
+
+	// &__container{
+
+	// }
+
+	&__greeting {
+		h3 {
+			font-weight: 900;
+			font-size: 24px;
+			line-height: 15px;
+			color: #f28b2e;
+		}
+
+		small {
+			font-size: 12px;
+			line-height: 15px;
+			color: #121212;
+			padding-top: 10px;
+		}
+	}
+
+	&__earning {
+		margin-top: 28px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__chart {
+		background: #fff;
+		border-radius: 4px;
+		// width: 365px;
+		width: #{"min(365px, 90%)"};
+		height: 208px;
+	}
+
+	&__walletBalance {
+		height: 208px;
+		width: 223px;
+		background: rgba(243, 140, 140, 0.2);
+		backdrop-filter: blur(50px);
+		border-radius: 100px 10px 50px 30px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+		order: -1;
+		margin-bottom: 1.5rem;
+
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 112px;
+			height: 32px;
+			margin-top: 22px;
+			background: #fcfbfb;
+			border-radius: 30px;
+			font-weight: 600;
+			font-size: 14px;
+			line-height: 15px;
+			color: #8335ba;
+		}
+	}
+
+	&__pickupData {
+		margin-top: 38px;
+	}
+
+	.table__head {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		margin-bottom: 14px;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 20px;
+		color: #979797;
+		padding-left: 12px;
+	}
+
+	&__user, &__logout {
+		// visibility: hidden;
+		display: none;
+	}
+}
+
+@media only screen and (min-width: "600px") {
+	.overview {
+		display: flex;
+		position: relative;
+
+		&__container {
+			width: 832px;
+			height: 653px;
+			background: #fff;
+			padding-top: 45px;
+			padding-left: 110px;
+			padding-right: 114px;
+		}
+
+		&__earning {
+			flex-direction: row;
+		}
+
+		&__chart {
+			background: #f4f4f4;
+			margin-right: 20px;
+			order: -1;
+		}
+
+		&__walletBalance {
+			margin-bottom: 0;
+		}
+
+		.table__body {
+			height: 200px;
+			overflow-y: scroll;
+		}
+
+		&__user {
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+			margin-left: 125px;
+			height: 58px;
+			width: 130px;
+			background: #f4f4f4;
+		}
+
+		&__logout {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			right: 95px;
+			top: 110px;
+			background: #f4f4f4;
+			color: #F0660C;
+			height: 58px;
+			width: 130px;
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+			border-radius: 8px;
+			visibility: hidden;
+			cursor: pointer;
+		}
+	}
 }
