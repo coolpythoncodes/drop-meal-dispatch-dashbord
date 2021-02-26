@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import '../Sass/Overview.scss'
 import ArrowRight from '../assest/arrow_right.png'
 // import Avatar from '../assest/avatar.png'
@@ -27,7 +28,7 @@ const Overview = () => {
                     <div className="overview__walletBalance">
                         <p>Wallet Balance</p>
                         <h1>N 50, 500</h1>
-                        <a href="/">Withdraw <img src={ArrowRight} alt="" style={{ marginLeft: '9px' }} /></a>
+                        <Link to="/payment">Withdraw <img src={ArrowRight} alt="" style={{ marginLeft: '9px' }} /></Link>
                     </div>
                 </div>
 
