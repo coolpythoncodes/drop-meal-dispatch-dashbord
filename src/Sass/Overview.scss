@@ -91,15 +91,14 @@
 @media only screen and (min-width: "600px") {
 	.overview {
 		display: flex;
-		position: relative;
 
 		&__container {
-			width: 832px;
-			height: 653px;
+			// width: 832px;
+			height: 100vh;
 			background: #fff;
 			padding-top: 45px;
-			padding-left: 110px;
-			padding-right: 114px;
+			padding-left: 80px;
+			padding-right: 90px;
 		}
 
 		&__earning {
@@ -119,33 +118,6 @@
 		.table__body {
 			height: 200px;
 			overflow-y: scroll;
-		}
-
-		&__user {
-			display: flex;
-			align-items: center;
-			justify-content: space-evenly;
-			margin-left: 125px;
-			height: 58px;
-			width: 130px;
-			background: #f4f4f4;
-		}
-
-		&__logout {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			position: absolute;
-			right: 95px;
-			top: 110px;
-			background: #f4f4f4;
-			color: #F0660C;
-			height: 58px;
-			width: 130px;
-			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-			border-radius: 8px;
-			visibility: hidden;
-			cursor: pointer;
 		}
 	}
 }

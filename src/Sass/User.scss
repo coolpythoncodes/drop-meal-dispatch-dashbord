@@ -1,0 +1,35 @@
+@media only screen and (min-width: "600px") {
+	.account {
+		grid-area: account;
+        margin-left: 125px;
+        padding-top: 41px;
+        position: relative;
+
+		&__user {
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+			// margin-left: 125px;
+			height: 58px;
+			width: 130px;
+			background: #f4f4f4;
+		}
+
+		&__logout {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			right: 110px;
+			top: 110px;
+			background: #f4f4f4;
+			color: #f0660c;
+			height: 58px;
+			width: 130px;
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+			border-radius: 8px;
+			visibility: hidden;
+			cursor: pointer;
+		}
+	}
+}

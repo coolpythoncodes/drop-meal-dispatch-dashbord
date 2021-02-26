@@ -1,18 +1,16 @@
-import React from 'react';
-import { useState } from 'react'
 import '../Sass/Overview.scss'
 import ArrowRight from '../assest/arrow_right.png'
-import Avatar from '../assest/avatar.png'
-import ArrowDown from '../assest/arrow_down.png'
-import LogoOutImage from '../assest/logout.png'
+// import Avatar from '../assest/avatar.png'
+// import ArrowDown from '../assest/arrow_down.png'
+// import LogoOutImage from '../assest/logout.png'
 import TableData from './TableData';
 
 const Overview = () => {
 
-    const [show, setShow] = useState(false);
-    const showLogoOut = () => {
-        setShow(!show)
-    }
+    // const [show, setShow] = useState(false);
+    // const showLogoOut = () => {
+    //     setShow(!show)
+    // }
 
     return (
         <div className='overview'>
@@ -75,14 +73,14 @@ const Overview = () => {
                 </div>
             </div>
 
-            <div className="overview__user">
+            {/* <div className="overview__user">
                 <img src={Avatar} alt="" style={{ marginRight: '9px' }} />
                 <img src={ArrowDown} alt="" onClick={showLogoOut} />
             </div>
             <div className={`overview__logout ${show ? 'show' : null}`} style={show ? { visibility: 'visible' } : null}>
                 <img src={LogoOutImage} alt="" style={{ marginRight: '19px' }} />
                 <p>Logout</p>
-            </div>
+            </div> */}
         </div>
     );
 }
