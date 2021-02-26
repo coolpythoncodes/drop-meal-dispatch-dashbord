@@ -1,0 +1,19 @@
+.riders{
+    grid-area: main;
+    padding-top: 41px;
+	padding-left: 1rem;
+
+}
+
+@media only screen and (min-width:'600px'){
+    .riders{
+
+        &__container{
+            height: 100vh;
+			background: #fff;
+			padding-top: 45px;
+			padding-left: 80px;
+			padding-right: 90px;
+        }
+    }
+}
