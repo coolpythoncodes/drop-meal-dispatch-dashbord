@@ -1,19 +1,75 @@
-.riders{
-    grid-area: main;
-    padding-top: 41px;
+.riders {
+	grid-area: main;
+	padding-top: 41px;
 	padding-left: 1rem;
+	padding-right: 1rem;
 
+	&__header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__addUsers {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		width: 112px;
+		height: 32px;
+		background: #0167c8;
+		border-radius: 30px;
+		cursor: pointer;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		 -khtml-user-select: none; /* Konqueror HTML */
+		   -moz-user-select: none; /* Old versions of Firefox */
+			-ms-user-select: none; /* Internet Explorer/Edge */
+				user-select: none;
+
+		p {
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 15px;
+			color: #faf9f9;
+		}
+	}
+
+	&__table {
+		margin-top: 76px;
+	}
+
+	&__tableHead {
+		display: grid;
+		grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+        font-weight: 600;
+		font-size: 14px;
+		line-height: 20px;
+		color: #979797;
+		margin-bottom: 22px;
+		padding-left: 12px;
+	}
+
+    // &__tableData{
+    //     display: grid;
+    //     grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+    // }
 }
 
-@media only screen and (min-width:'600px'){
-    .riders{
+@media only screen and (min-width: "600px") {
+	.riders {
+		padding-right: 0;
 
-        &__container{
-            height: 100vh;
+		&__container {
+			height: 100vh;
 			background: #fff;
 			padding-top: 45px;
 			padding-left: 80px;
 			padding-right: 90px;
-        }
-    }
+			position: relative;
+		}
+
+		&__tableData{
+			height: 216px;
+			overflow-y: auto;
+		}
+	}
 }
