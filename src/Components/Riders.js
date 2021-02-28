@@ -11,6 +11,8 @@ const Riders = () => {
 
     const [close, setClose] = useState(false); // open and close add new rider popup
     const [showChangePasswordPopup, setShowChangePasswordPopup] = useState(false)
+    const [showEdit, setShowEdit] = useState(false);
+
     // open and close add new rider popup
     const handleClose = () => {
         setClose(!close)
@@ -19,6 +21,16 @@ const Riders = () => {
     // open and close change password popup
     const handleChangePassword = () => {
         setShowChangePasswordPopup(!showChangePasswordPopup)
+    }
+
+    
+
+    const showEditOption = () => {
+        setShowEdit(!showEdit)
+    }
+
+    const handleCloseEdit = () => {
+        setShowEdit(!showEdit)
     }
 
     return (
@@ -37,7 +49,7 @@ const Riders = () => {
                     <div
                         className="riders__addUsers"
                         onClick={handleClose}
-                        style={close || showChangePasswordPopup ? { pointerEvents: 'none' } : null}
+                        style={close || showChangePasswordPopup || showEdit ? { pointerEvents: 'none' } : null}
                     >
                         <p>Add new</p>
                         <img src={PlusImage} alt="" />
@@ -71,6 +83,9 @@ const Riders = () => {
                             handleChangePassword={handleChangePassword}
                             showChangePasswordPopup={showChangePasswordPopup}
                             close={close}
+                            showEditOption={showEditOption}
+                            showEdit={showEdit}
+                            handleCloseEdit={handleCloseEdit}
                             
                         />
                         {/* <RidersTableData 

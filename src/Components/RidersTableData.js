@@ -1,19 +1,11 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import CloseIcon from '@material-ui/icons/Close';
 import MoreImage from '../assest/more.png';
 import '../Sass/RidersTableData.scss'
 
-const RidersTableData = ({ name, email, trips, status, handleChangePassword, close, showChangePasswordPopup }) => {
+const RidersTableData = ({ name, email, trips, status, handleChangePassword, close, showChangePasswordPopup, showEditOption, showEdit, handleCloseEdit }) => {
 
-    const [showEdit, setShowEdit] = useState(false);
 
-    const showEditOption = () => {
-        setShowEdit(!showEdit)
-    }
-
-    const handleClose = () => {
-        setShowEdit(!showEdit)
-    }
     
     return (
         <div className='tableData'>
@@ -43,7 +35,13 @@ const RidersTableData = ({ name, email, trips, status, handleChangePassword, clo
                         Change password
                     </li>
                 </ul>
-                <div className='close' onClick={handleClose}><CloseIcon /> </div>
+                <div 
+                    className='close' 
+                    onClick={handleCloseEdit}
+                    style={showChangePasswordPopup ? { pointerEvents: 'none' } : null}
+                >
+                    <CloseIcon /> 
+                </div>
             </div>
         </div>
     );
