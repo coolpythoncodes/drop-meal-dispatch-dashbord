@@ -2,6 +2,7 @@
 import '../Sass/AddNewRider.scss'
 // import CloseButton from '../assest/Cancel.png'
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+import Button from './Button';
 
 
 const AddNewRider = ({ close, handleClose }) => {
@@ -28,7 +29,15 @@ const AddNewRider = ({ close, handleClose }) => {
                             <label>Password</label>
                             <input className='addNewRider__input' type="password" name="" id="password"/>
                         </div>
-                        <button className='addNewRider__button' type="submit">CREATE USER</button>
+                        <Button 
+                            title='CREATE USER'
+                            color='#FBFBFB'
+                            background=' #0079EC'
+                            height='32px'
+                            style={{
+                                marginTop: '25px'
+                            }}
+                        />
                     </form>
                 </div>
             </div>
