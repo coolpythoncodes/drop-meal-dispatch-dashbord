@@ -3,7 +3,7 @@ import '../Sass/Search.scss'
 const Search = () => {
     return (
         <form className="search">
-            <input type="text" placeholder='Search' />
+            <input className='search__input' type="text" placeholder='Search' />
         </form>
     );
 }
