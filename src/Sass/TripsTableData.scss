@@ -1,0 +1,15 @@
+.trips__tableData {
+	display: grid;
+	grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+
+    // > div{
+    //     border: solid red;
+    // }
+
+	p {
+		font-weight: 600;
+		font-size: 12px;
+		line-height: 20px;
+		color: #121212;
+	}
+}
