@@ -3,10 +3,6 @@
 	padding-top: 41px;
 	padding-left: 1rem;
 
-	// &__container{
-
-	// }
-
 	&__greeting {
 		h3 {
 			font-weight: 900;
@@ -92,7 +88,6 @@
 	.overview {
 
 		&__container {
-			// width: 832px;
 			height: 100vh;
 			background: #fff;
 			padding-top: 45px;
@@ -116,7 +111,7 @@
 
 		.table__body {
 			height: 200px;
-			overflow-y: scroll;
+			overflow-y: auto;
 		}
 	}
 }

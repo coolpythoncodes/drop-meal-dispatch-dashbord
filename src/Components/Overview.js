@@ -4,7 +4,7 @@ import ArrowRight from '../assest/arrow_right.png'
 // import Avatar from '../assest/avatar.png'
 // import ArrowDown from '../assest/arrow_down.png'
 // import LogoOutImage from '../assest/logout.png'
-import TableData from './TableData';
+import OverviewTableData from './OverviewTableData';
 
 const Overview = () => {
 
@@ -41,28 +41,28 @@ const Overview = () => {
                         <div><p>Fee</p></div>
                     </div>
                     <div className="table__body">
-                        <TableData
+                        <OverviewTableData
                             pickUp='Matt Ice (MM Way)'
                             dropOff='192 MM Way, Opposite...'
                             time='12.59 PM'
                             status='pending'
                             fee='N 500'
                         />
-                        <TableData
+                        <OverviewTableData
                             pickUp='Kada Africana  (Sape ...'
                             dropOff='192 MM Way, Opposite...'
                             time='21 Jan. 2021'
                             status='Active'
                             fee='N 500'
                         />
-                        <TableData
+                        <OverviewTableData
                             pickUp='Kada Fried (Sapele Rd.)'
                             dropOff='192 MM Way, Opposite...'
                             time='2 Nov. 2020'
                             status='Delivered'
                             fee='N 500'
                         />
-                        <TableData
+                        <OverviewTableData
                             pickUp='Kada Fried (Sapele Rd.)'
                             dropOff='192 MM Way, Opposite...'
                             time='2 Nov. 2020'
