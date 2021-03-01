@@ -61,8 +61,8 @@ const Overview = () => {
                     <div className="table__head">
                         <div><p>Pick up</p></div>
                         <div><p>Drop off</p></div>
-                        <div><p>Time</p></div>
-                        <div><p>Status</p></div>
+                        <div style={{justifySelf:'center'}}><p>Time</p></div>
+                        <div style={{justifySelf:'center'}}><p>Status</p></div>
                         <div><p>Fee</p></div>
                     </div>
                     <div className="table__body">

@@ -25,10 +25,10 @@ const TableData = ({ data }) => {
             <div>
                 <p>{data.dropOff}</p>
             </div>
-            <div>
+            <div style={{justifySelf:'center'}}>
                 <p>{data.time}</p>
             </div>
-            <div>
+            <div style={{justifySelf:'center'}} >
                 <p style={getStatusStyling()}>{data.status}</p>
             </div>
             <div>
