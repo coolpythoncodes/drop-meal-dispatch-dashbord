@@ -1,22 +1,38 @@
 import '../Sass/OverviewTableData.scss'
 
-const TableData = ({ pickUp, dropOff, time, status, fee }) => {
+const TableData = ({ data }) => {
+
+    const getStatusStyling = () => {
+        if (data.status === 'Pending') {
+            return {
+                color: '#F28B2E'
+            }
+        }else if (data.status === 'Active'){
+            return{
+                color:'#2AB2FE'
+            }
+        }else{
+            return {
+                color:'#6DA544'
+            }
+        }
+    }
     return (
         <div className='overview__tableData'>
             <div>
-                <p>{pickUp}</p>
+                <p>{data.pickUp}</p>
             </div>
             <div>
-                <p>{dropOff}</p>
+                <p>{data.dropOff}</p>
             </div>
             <div>
-                <p>{time}</p>
+                <p>{data.time}</p>
             </div>
             <div>
-                <p>{status}</p>
+                <p style={getStatusStyling()}>{data.status}</p>
             </div>
             <div>
-                <p className='fee'>{fee}</p>
+                <p className='fee'>N {data.fee}</p>
             </div>
         </div>
     );

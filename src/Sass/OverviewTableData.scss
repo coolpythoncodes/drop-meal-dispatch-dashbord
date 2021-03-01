@@ -1,10 +1,13 @@
 .overview__tableData {
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+	// grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: 2fr 2fr 1fr 2fr 1fr;
+	column-gap: 4px;
 	background: #f4f4f4;
 	border-radius: 4px;
 	padding: 14px 0;
     padding-left: 12px;
+	padding-right: 12px;
 	margin-bottom: 8px;
 	font-weight: 600;
 	font-size: 12px;
@@ -12,7 +15,18 @@
 	color: #121212;
     overflow: hidden;
 
+	// > div{
+	// 	border: solid red;
+	// }
+
     .fee{
         font-weight: 900;
+
     }
+}
+
+@media only screen and (max-width:'600px'){
+	.overview__tableData {
+		margin-bottom: 2rem;
+	}
 }
