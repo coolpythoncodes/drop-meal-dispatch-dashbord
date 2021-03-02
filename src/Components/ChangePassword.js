@@ -19,11 +19,11 @@ const ChangePassword = ({close, handleChangePassword, showChangePasswordPopup })
                     <form action="">
                         <div className="name">
                             <label>New password</label>
-                            <input className='change__passwordInput' type="password" name="" id="name"/>
+                            <input className='change__passwordInput' type="password" name="" id="password1"/>
                         </div>
                         <div className="email">
                             <label>Confirm password</label>
-                            <input className='change__passwordInput' type="password" name="" id="email"/>
+                            <input className='change__passwordInput' type="password" name="" id="password2"/>
                         </div>
                         <Button 
                             title='CHANGE PASSWORD'
