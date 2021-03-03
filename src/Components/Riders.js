@@ -13,6 +13,9 @@ const Riders = () => {
     const [showChangePasswordPopup, setShowChangePasswordPopup] = useState(false)
     const [showEdit, setShowEdit] = useState(false);
 
+    const [fullName, setFullName] = useState('');
+    const [email, setEmail] = useState('');
+
     const [tableDataRiders, setTableDataRiders] = useState([
         {
             name: 'Kazim Davids',
@@ -41,12 +44,29 @@ const Riders = () => {
         setShowEdit(!showEdit)
     }
 
+    const addNewRider = (fullName, email) => {
+        const newRider = [...tableDataRiders, { name: fullName, email, trips: 0, status: 'Static' }]
+        setTableDataRiders(newRider)
+    }
+
+    const handleAddNewRiderSubmit = e => {
+        e.preventDefault();
+        addNewRider(fullName, email)
+        setFullName('')
+        setEmail('')
+    }
+
     return (
         <div className='riders'>
             <div className="riders__container">
                 <AddNewRider
                     handleClose={handleClose}
                     close={close}
+                    fullName={fullName}
+                    setFullName={setFullName}
+                    email={email}
+                    setEmail={setEmail}
+                    handleAddNewRiderSubmit={handleAddNewRiderSubmit}
                 />
                 <ChangePassword
                     showChangePasswordPopup={showChangePasswordPopup}
@@ -91,25 +111,6 @@ const Riders = () => {
                                 handleCloseEdit={handleCloseEdit} />)
                         }
 
-                        {/* <RidersTableData
-                            name='Kazim Davids'
-                            email='Kazimdavids@gmailcom'
-                            trips={3}
-                            status='Riding'
-                            handleChangePassword={handleChangePassword}
-                            showChangePasswordPopup={showChangePasswordPopup}
-                            close={close}
-                            showEditOption={showEditOption}
-                            showEdit={showEdit}
-                            handleCloseEdit={handleCloseEdit}
-
-                        /> */}
-                        {/* <RidersTableData 
-                            name='Robert King'
-                            email='Robertking@gmailcom'
-                            trips={0}
-                            status='Static'
-                        /> */}
                     </div>
                 </div>
             </div>
