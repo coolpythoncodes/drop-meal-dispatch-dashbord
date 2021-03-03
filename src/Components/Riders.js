@@ -13,17 +13,25 @@ const Riders = () => {
     const [showChangePasswordPopup, setShowChangePasswordPopup] = useState(false)
     const [showEdit, setShowEdit] = useState(false);
 
+    const [tableDataRiders, setTableDataRiders] = useState([
+        {
+            name: 'Kazim Davids',
+            email: 'Kazimdavids@gmailcom',
+            trips: 3,
+            status: 'Riding',
+        }
+    ]);
+
     // open and close add new rider popup
     const handleClose = () => {
         setClose(!close)
-        console.log(close)
     }
     // open and close change password popup
     const handleChangePassword = () => {
         setShowChangePasswordPopup(!showChangePasswordPopup)
     }
 
-    
+
 
     const showEditOption = () => {
         setShowEdit(!showEdit)
@@ -74,8 +82,16 @@ const Riders = () => {
                     </div>
 
                     <div className="riders__tableData">
+                        {
+                            tableDataRiders.map((data, index) => <RidersTableData key={index} data={data} handleChangePassword={handleChangePassword}
+                                showChangePasswordPopup={showChangePasswordPopup}
+                                close={close}
+                                showEditOption={showEditOption}
+                                showEdit={showEdit}
+                                handleCloseEdit={handleCloseEdit} />)
+                        }
 
-                        <RidersTableData
+                        {/* <RidersTableData
                             name='Kazim Davids'
                             email='Kazimdavids@gmailcom'
                             trips={3}
@@ -86,8 +102,8 @@ const Riders = () => {
                             showEditOption={showEditOption}
                             showEdit={showEdit}
                             handleCloseEdit={handleCloseEdit}
-                            
-                        />
+
+                        /> */}
                         {/* <RidersTableData 
                             name='Robert King'
                             email='Robertking@gmailcom'

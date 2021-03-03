@@ -63,13 +63,11 @@ const Overview = () => {
                         <div><p>Drop off</p></div>
                         <div><p>Time</p></div>
                         <div style={{justifySelf:'center'}}><p>Status</p></div>
-                        <div><p>Fee</p></div>
+                        <div><p>Fee (N)</p></div>
                     </div>
                     <div className="table__body">
                         {
-                            tableDataOverview.map((data,index) => {
-                                return <OverviewTableData key={index} data={data} />
-                            })
+                            tableDataOverview.map((data,index) => <OverviewTableData key={index} data={data} />)
                         }
 
                     </div>

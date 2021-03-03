@@ -32,7 +32,7 @@ const TableData = ({ data }) => {
                 <p style={getStatusStyling()}>{data.status}</p>
             </div>
             <div>
-                <p className='fee'>N {data.fee}</p>
+                <p className='fee'>{data.fee}</p>
             </div>
         </div>
     );
