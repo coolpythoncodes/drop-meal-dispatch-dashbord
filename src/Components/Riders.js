@@ -54,6 +54,7 @@ const Riders = () => {
         addNewRider(fullName, email)
         setFullName('')
         setEmail('')
+        setClose(!close)
     }
 
     return (
