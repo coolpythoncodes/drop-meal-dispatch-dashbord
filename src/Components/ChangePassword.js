@@ -10,7 +10,7 @@ const ChangePassword = ({close, handleChangePassword, showChangePasswordPopup })
                 <div className="top">
                     <h1>Change Password</h1>
                     <HighlightOffIcon
-                        style={{ color: '#F0660C', fontSize: 40 }}
+                        style={{ color: '#F0660C', fontSize: 25 }}
                         onClick={handleChangePassword} 
                     />
                     {/* <img src={CloseButton} alt=""/> */}
@@ -32,7 +32,6 @@ const ChangePassword = ({close, handleChangePassword, showChangePasswordPopup })
                             height='32px' 
                             style={{
                                 marginTop:'25px',
-                                marginBottom:'92px',
                             }}                         
                         />
                     </form>
