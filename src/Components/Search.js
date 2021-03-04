@@ -1,11 +1,16 @@
-import '../Sass/Search.scss'
+import "../Sass/Search.scss";
 
-const Search = () => {
-    return (
-        <form className="search">
-            <input className='search__input' type="text" placeholder='Search' />
-        </form>
-    );
-}
+const Search = ({ onSearchChange }) => {
+	return (
+		<form className="search">
+			<input
+				className="search__input"
+				type="text"
+				placeholder="Search"
+				onChange={onSearchChange}
+			/>
+		</form>
+	);
+};
 
 export default Search;

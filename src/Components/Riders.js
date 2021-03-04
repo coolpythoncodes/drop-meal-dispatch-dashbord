@@ -16,8 +16,11 @@ const Riders = () => {
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
 
+    const [searchField, setSearchField] = useState('');
+
     const [tableDataRiders, setTableDataRiders] = useState([
         {
+            id: 1,
             name: 'Kazim Davids',
             email: 'Kazimdavids@gmailcom',
             trips: 3,
@@ -36,8 +39,9 @@ const Riders = () => {
 
 
 
-    const showEditOption = () => {
+    const showEditOption = (index) => {
         setShowEdit(!showEdit)
+        console.log(index)
     }
 
     const handleCloseEdit = () => {
@@ -57,6 +61,16 @@ const Riders = () => {
         setClose(!close)
     }
 
+    const onSearchChange= (e) => {
+        setSearchField(e.target.value)
+        console.log(e.target.value)
+        // const filteredRidersName = tableDataRiders.filter(rider => rider.name.toLowerCase().includes(searchField.toLowerCase()))
+        // setTableDataRiders(filteredRidersName)
+    }
+
+    const filteredRidersName = tableDataRiders.filter(rider => rider.name.toLowerCase().includes(searchField.toLowerCase()))
+
+
     return (
         <div className='riders'>
             <div className="riders__container">
@@ -74,7 +88,9 @@ const Riders = () => {
                     handleChangePassword={handleChangePassword}
                 />
                 <div className="riders__header">
-                    <Search />
+                    <Search 
+                        onSearchChange={onSearchChange} 
+                    />
                     <div
                         className="riders__addUsers"
                         onClick={handleClose}
@@ -104,12 +120,13 @@ const Riders = () => {
 
                     <div className="riders__tableData">
                         {
-                            tableDataRiders.map((data, index) => <RidersTableData key={index} data={data} handleChangePassword={handleChangePassword}
+                            filteredRidersName.map((data, index) => <RidersTableData key={index} data={data} handleChangePassword={handleChangePassword}
                                 showChangePasswordPopup={showChangePasswordPopup}
                                 close={close}
                                 showEditOption={showEditOption}
                                 showEdit={showEdit}
-                                handleCloseEdit={handleCloseEdit} />)
+                                handleCloseEdit={handleCloseEdit}
+                                index={index} />)
                         }
 
                     </div>

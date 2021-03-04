@@ -3,7 +3,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import MoreImage from '../assest/more.png';
 import '../Sass/RidersTableData.scss'
 
-const RidersTableData = ({ data, handleChangePassword, close, showChangePasswordPopup, showEditOption, showEdit, handleCloseEdit }) => {
+const RidersTableData = ({ data,index, handleChangePassword, close, showChangePasswordPopup, showEditOption, showEdit, handleCloseEdit }) => {
 
 
     
@@ -22,7 +22,7 @@ const RidersTableData = ({ data, handleChangePassword, close, showChangePassword
                 <p>{data.status}</p>
             </div>
             <div style={{justifySelf:'center'}}>
-                <img src={MoreImage} alt="" onClick={showEditOption}/>
+                <img src={MoreImage} alt="" onClick={()=>showEditOption(data.id)}/>
             </div>
             <div className="tableData__edit" style={showEdit ? {visibility:'visible'} : null}>
                 <ul>
