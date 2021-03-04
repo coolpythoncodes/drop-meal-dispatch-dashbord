@@ -11,6 +11,8 @@
 	&__tableHead {
 		display: grid;
 		grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+		padding: 14px 0;
+		padding-left: 12px;
 
 		// > div {
 		// 	border: solid yellow;
