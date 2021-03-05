@@ -4,6 +4,7 @@ import '../Sass/Trips.scss'
 import TripsTableData from './TripsTableData';
 
 const Trips = () => {
+    // const searchTerm = useSelector(state => state.state)
     return (
         <div className='trips'>
             <div className="trips__container">
