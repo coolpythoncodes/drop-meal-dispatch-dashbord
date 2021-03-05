@@ -1,10 +1,155 @@
-import React from 'react';
+import { useState } from 'react';
 import Search from './Search';
 import '../Sass/Trips.scss'
 import TripsTableData from './TripsTableData';
+import { useSelector } from 'react-redux';
+import { selectSearchItem } from '../features/search/searchSlice';
 
 const Trips = () => {
-    // const searchTerm = useSelector(state => state.state)
+    const searchTerm = useSelector(selectSearchItem)
+
+
+    const [tableTripsData, setTableTripsData] = useState([
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Kazimdavids@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Kazimdavids@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Kazimdavids@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Kazimdavids@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Kazimdavids@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Robertking@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Kazimdavids@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Kazimdavids@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Kazimdavids@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Kazimdavids@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Kazimdavids@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Kazimdavids@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Kazimdavids@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Kazimdavids@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Kazimdavids@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Kazimdavids@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+        {
+            id: Date.now(),
+            pickUp: 'Mat Ice (MM Way)',
+            dropOff: '192 MM way, Opposite Ma...',
+            rider: 'Kazimdavids@gmailcom',
+            status: 'Riding',
+            fee: 500
+        },
+    ]);
+    
+    const filterTableData = tableTripsData.filter(item => item.rider.toLowerCase().includes(searchTerm.toLowerCase()))
+
     return (
         <div className='trips'>
             <div className="trips__container">
@@ -32,127 +177,26 @@ const Trips = () => {
                     </div>
 
                     <div className="trips__tableBody">
-                        <TripsTableData 
+                        {
+                            filterTableData.map(item => (
+                                <TripsTableData 
+                                    id={item.id} 
+                                    pickUp={item.pickUp}
+                                    dropOff={item.dropOff}
+                                    rider={item.rider}
+                                    status={item.status}
+                                    fee={item.fee}
+                                />
+                            ))
+                        }
+                        {/* <TripsTableData
                             pickUp='Mat Ice (MM Way)'
                             dropOff='192 MM way, Opposite Ma...'
                             rider='Kazimdavids@gmailcom'
                             status='Riding'
                             fee={500}
-                        />
-                        <TripsTableData 
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        />
-                        <TripsTableData 
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        />
-                        <TripsTableData 
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        />
-                        <TripsTableData 
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        />
-                        <TripsTableData 
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        />
-                        <TripsTableData 
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        />
-                        <TripsTableData 
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        />
-                        <TripsTableData 
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        />
-
-                        {/*  */}
-                        <TripsTableData 
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        />
-                        <TripsTableData 
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        />
-                        <TripsTableData 
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        />
-                        <TripsTableData 
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        />
-                             <TripsTableData 
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        />
-                        <TripsTableData 
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        />
-                        <TripsTableData 
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        />
-                        <TripsTableData 
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        />
+                        /> */}
+                        
                     </div>
 
                     <div className="trips__pagination">

@@ -23,7 +23,7 @@ const Riders = () => {
 
     const [tableDataRiders, setTableDataRiders] = useState([
         {
-            id: 1,
+            id: Date.now(),
             name: 'Kazim Davids',
             email: 'Kazimdavids@gmailcom',
             trips: 3,
