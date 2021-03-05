@@ -5,6 +5,8 @@ import '../Sass/Riders.scss';
 import RidersTableData from './RidersTableData';
 import AddNewRider from './AddNewRider';
 import ChangePassword from './ChangePassword';
+import { useSelector } from 'react-redux';
+import { selectSearchItem } from '../features/search/searchSlice';
 
 
 const Riders = () => {
@@ -16,7 +18,8 @@ const Riders = () => {
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
 
-    const [searchField, setSearchField] = useState('');
+    const searchTerm = useSelector(selectSearchItem)
+
 
     const [tableDataRiders, setTableDataRiders] = useState([
         {
@@ -61,14 +64,7 @@ const Riders = () => {
         setClose(!close)
     }
 
-    const onSearchChange= (e) => {
-        setSearchField(e.target.value)
-        console.log(e.target.value)
-        // const filteredRidersName = tableDataRiders.filter(rider => rider.name.toLowerCase().includes(searchField.toLowerCase()))
-        // setTableDataRiders(filteredRidersName)
-    }
-
-    const filteredRidersName = tableDataRiders.filter(rider => rider.name.toLowerCase().includes(searchField.toLowerCase()))
+    const filteredRidersName = tableDataRiders.filter(rider => rider.name.toLowerCase().includes(searchTerm.toLowerCase()))
 
 
     return (
@@ -88,9 +84,7 @@ const Riders = () => {
                     handleChangePassword={handleChangePassword}
                 />
                 <div className="riders__header">
-                    <Search 
-                        onSearchChange={onSearchChange} 
-                    />
+                    <Search />
                     <div
                         className="riders__addUsers"
                         onClick={handleClose}

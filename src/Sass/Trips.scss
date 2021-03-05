@@ -32,23 +32,23 @@
 
 	&__pagination {
 		display: flex;
-        align-items: center;
+		align-items: center;
 		justify-content: center;
 		font-weight: 300;
 		font-size: 12px;
 		line-height: 20px;
 		color: #979797;
-        margin-top: 25px;
+		margin-top: 25px;
 
-        > div{
-            margin-right: 13px;
-        }
+		> div {
+			margin-right: 13px;
+		}
 
-        .current__page{
-            border: 1px solid #F0660C;
-            border-radius: 2px;
-            padding: 1px 4px;
-        }
+		.current__page {
+			border: 1px solid #f0660c;
+			border-radius: 2px;
+			padding: 1px 4px;
+		}
 	}
 }
 
@@ -63,13 +63,13 @@
 			padding-left: 80px;
 			padding-right: 90px;
 			position: relative;
-            padding-bottom: 57px;
+			padding-bottom: 57px;
 		}
 
 		&__tableBody {
 			height: 300px;
 			overflow-y: auto;
-			
+
 			&::-webkit-scrollbar {
 				width: 10px;
 			}
@@ -77,7 +77,6 @@
 			&::-webkit-scrollbar-track {
 				background: #e5e5e5;
 				border-radius: 5px;
-				
 			}
 
 			&::-webkit-scrollbar-thumb {
@@ -91,6 +90,14 @@
 			&::-webkit-scrollbar-thumb:hover {
 				background: #555;
 			}
+		}
+	}
+}
+
+@media only screen and (max-width: "420px") {
+	.trips {
+		&__tableHead {
+			grid-template-columns: repeat(5, 1fr);
 		}
 	}
 }

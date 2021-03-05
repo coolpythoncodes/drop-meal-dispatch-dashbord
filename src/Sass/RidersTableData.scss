@@ -12,6 +12,10 @@
 	padding-left: 12px;
 	margin-bottom: 8px;
 
+	> div{
+		border: solid red;
+	}
+
 	&__edit {
 		position: absolute;
 		visibility: hidden;
