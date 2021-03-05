@@ -189,13 +189,6 @@ const Trips = () => {
                                 />
                             ))
                         }
-                        {/* <TripsTableData
-                            pickUp='Mat Ice (MM Way)'
-                            dropOff='192 MM way, Opposite Ma...'
-                            rider='Kazimdavids@gmailcom'
-                            status='Riding'
-                            fee={500}
-                        /> */}
                         
                     </div>
 

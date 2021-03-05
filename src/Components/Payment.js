@@ -1,10 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Search from './Search';
 import '../Sass/Payment.scss'
 import Button from './Button';
 import PaymentTableData from './PaymentTableData';
+import { useSelector } from 'react-redux';
+import { selectSearchItem } from '../features/search/searchSlice';
 
 const Payment = () => {
+    const searchTerm = useSelector(selectSearchItem)
+    const [paymentTableData, setPaymentTableData] = useState([
+        {
+            id: Date.now(),
+            date: '2 Jan. 2021',
+            amount: '150,000.00',
+            reference: '#SME20215345',
+            status: 'Processing',
+        },
+        {
+            id: Date.now(),
+            date: '2 Jan. 2021',
+            amount: '150,000.00',
+            reference: '#EFE20215345',
+            status: 'Processing',
+        },
+        {
+            id: Date.now(),
+            date: '2 Jan. 2021',
+            amount: '150,000.00',
+            reference: '#KIN20215345',
+            status: 'Processing',
+        },
+        {
+            id: Date.now(),
+            date: '2 Jan. 2021',
+            amount: '150,000.00',
+            reference: '#DIW20215345',
+            status: 'Processing',
+        },
+    ]);
+    
+    const filterPaymentTableData = paymentTableData.filter(item => item.reference.toLowerCase().includes(searchTerm.toLowerCase()))
+
     return (
         <div className='payment'>
             <div className="payment__container">
@@ -38,12 +74,12 @@ const Payment = () => {
                                         <label htmlFor="">Account number</label>
                                         <input type="number" name="" id="account-number" />
                                     </div>
-                                    <div style={{alignSelf:'end'}}>
-                                        <Button 
+                                    <div style={{ alignSelf: 'end' }}>
+                                        <Button
                                             title='PROCESS PAYMENT'
                                             color='#FBFBFB'
                                             background='#6DB8FF'
-                                            style={{height:'32px'}}
+                                            style={{ height: '32px' }}
                                         />
                                     </div>
                                 </form>
@@ -68,34 +104,28 @@ const Payment = () => {
                         </div>
                         <div>
                             <p>Status</p>
-                        </div>    
+                        </div>
                     </div>
 
                     <div className="payment__tableBody">
-                        <PaymentTableData 
+                        {
+                            filterPaymentTableData.map(item => (
+                                <PaymentTableData
+                                    id={item.id}
+                                    date={item.date}
+                                    amount={item.amount}
+                                    reference={item.reference}
+                                    status={item.status}
+                                />
+                            ))
+                        }
+                        {/* <PaymentTableData
                             date='2 Jan. 2021'
                             amount='150,000.00'
                             reference='#DIW20215345'
                             status='Processing'
-                        />
-                        <PaymentTableData 
-                            date='2 Jan. 2021'
-                            amount='150,000.00'
-                            reference='#DIW20215345'
-                            status='Processing'
-                        />
-                        <PaymentTableData 
-                            date='2 Jan. 2021'
-                            amount='150,000.00'
-                            reference='#DIW20215345'
-                            status='Processing'
-                        />
-                        <PaymentTableData 
-                            date='2 Jan. 2021'
-                            amount='150,000.00'
-                            reference='#DIW20215345'
-                            status='Processing'
-                        />
+                        /> */}
+
                     </div>
                 </div>
             </div>
